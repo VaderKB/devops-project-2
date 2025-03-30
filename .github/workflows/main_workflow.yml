@@ -6,10 +6,7 @@ on:
 run-name: main workflow
 jobs:
     setup-env-variables:
-        runs-on: ubuntu-latest
-        steps:
-            - name: call workflow to setup env variables
-              uses: ./.github/workflows/set-env-vars.yml
-              with:
-                env_val: dev
+        uses: ./.github/workflows/set-env-vars.yml
+        with:
+            env_val: dev
 
