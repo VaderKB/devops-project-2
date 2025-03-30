@@ -1,0 +1,10 @@
+{
+    "adapter_config": {
+        "S3_BUCKET_NAME": "shiv-data-analytics",
+        "S3_FOLDER": "output_file",
+        "S3_FILE_NAME": "processed_data"
+    },
+    "vm_config": {
+        "EC2_NAME": "pipeline-vm"
+    }
+}

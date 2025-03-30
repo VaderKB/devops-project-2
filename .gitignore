@@ -1,0 +1,3 @@
+aws_creds.tf
+.terraform*
+*tfstate*

@@ -1,0 +1,6 @@
+#name: create vm
+#on: workflow_dispatch
+#run-name: create ec2 instance
+#env:
+#    TF_VAR_env: env
+    

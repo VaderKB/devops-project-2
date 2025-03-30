@@ -1,0 +1,23 @@
+name: set env variables
+on: workflow_call
+inputs:
+    env_val:
+        description: specify the environment in which we are runnin the workflow
+        required: false
+        default: dev
+        type: string
+run-name: setting env variables
+job:
+    set-env-vars:
+        runs-on: ubuntu-latest
+        environment: ${{ $inputs.env_val }}
+        steps:
+            - name: get code
+              uses: actions/checkout@v4
+            - name: install packages
+              run: |
+                pip install --upgrade pip
+                pip install -r requirements.txt
+            - name: executre python set_env_vars
+              run: python set_env_vars.py ${{ secrets.TOKEN}} ${{ $inputs.env_val }}
+              
