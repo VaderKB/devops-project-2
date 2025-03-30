@@ -7,10 +7,10 @@ inputs:
         default: dev
         type: string
 run-name: setting env variables
-job:
+jobs:
     set-env-vars:
         runs-on: ubuntu-latest
-        environment: ${{ $inputs.env_val }}
+        environment: dev
         steps:
             - name: get code
               uses: actions/checkout@v4
