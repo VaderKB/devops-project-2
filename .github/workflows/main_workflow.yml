@@ -5,7 +5,7 @@ on:
             - main
 run-name: main workflow
 jobs:
-    setup env variables:
+    setup-env-variables:
         runs-on: ubuntu-latest
         steps:
             - name: call workflow to setup env variables
