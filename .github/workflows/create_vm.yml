@@ -1,6 +1,8 @@
 name: create vm
 on: 
-    workflow_dispatch:
+    push:
+        branches:
+            - main
 run-name: create vm
 jobs:
     create-vm:
