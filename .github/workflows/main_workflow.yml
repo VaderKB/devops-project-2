@@ -9,4 +9,6 @@ jobs:
         uses: ./.github/workflows/set-env-vars.yml
         with:
             env_val: dev
+        secrets:
+            github-token: ${{ secrets.TOKEN}}
 
