@@ -7,5 +7,7 @@
     "vm_config": {
         "EC2_NAME": "pipeline-vm"
     },
-    "ENV": "env"
+    "environs": {
+        "ENV": "env"
+    }
 }
