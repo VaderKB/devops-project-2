@@ -1,6 +1,24 @@
-#name: create vm
-#on: workflow_dispatch
-#run-name: create ec2 instance
-#env:
-#    TF_VAR_env: env
+name: create vm
+on: 
+    workflow_dispatch:
+run-name: create vm
+jobs:
+    runs-on: ubuntu-latest
+    environment: dev
+    env:
+        job-folder: iac/ec2 
+    steps:
+        - name: get code
+          uses: actions/checkout@v4
+        - name: install terraform
+          uses: hashicorp/setup-terraform@v3
+        - name: initialize terraform
+          run: |
+            cd ${{ env.job-folder }}
+            terraform init
+        - name: create infra
+          run: terraform apply -auto-approve
+        - name: destroy infra
+          if: always()
+          run: terraform destroy -auto-approve
     

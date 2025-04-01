@@ -1,6 +1,6 @@
 resource "aws_security_group" "ec2_sec_grp" {
 
-  name = "${var.env}-firewall-rules"
+  name = "${var.ENV}-firewall-rules"
 
 }
 

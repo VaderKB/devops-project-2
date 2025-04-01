@@ -24,6 +24,8 @@ jobs:
 
     setup-env-variables:
         uses: ./.github/workflows/set-env-vars.yml
+        needs: 
+            - install-packages
         with:
             env_val: dev
         secrets:

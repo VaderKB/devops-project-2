@@ -2,6 +2,10 @@ variable "ec2_ports" {
   type = set(string)
 }
 
-variable "env" {
+variable "ENV" {
+  type = string
+}
+
+variable "EC2_NAME" {
   type = string
 }
