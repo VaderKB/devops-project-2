@@ -10,6 +10,8 @@ jobs:
         environment: dev
         env:
             job-folder: iac/ec2 
+            TF_VAR_EC2_NAME: ${{ env.TF_VAR_EC2_NAME }}
+            TF_VAR_ENV: ${{ env.TF_VAR_ENV }}
         steps:
             - name: get code
               uses: actions/checkout@v4
