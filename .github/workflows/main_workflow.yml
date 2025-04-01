@@ -2,7 +2,7 @@ name: main workflow
 on:
     push:
         branches:
-            - main
+            - blah
 run-name: main workflow
 jobs:
     install-packages:
