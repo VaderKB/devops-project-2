@@ -8,8 +8,8 @@ on:
                 default: dev
                 type: string
         secrets:
-        github-token:
-                required: true 
+            github-token:
+                    required: true 
 run-name: setting env variables
 jobs:
     set-env-vars:
