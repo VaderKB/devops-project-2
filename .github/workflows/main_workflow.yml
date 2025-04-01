@@ -5,10 +5,32 @@ on:
             - main
 run-name: main workflow
 jobs:
+    install-packages:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get code
+              uses: actions/checkout@v4
+            - name: cache packages
+              uses: actions/cache@v4
+              id: cache
+              with:
+                path: ~/.cache/pip
+                key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+            - name: install packages
+              if: steps.cache.outputs.cache-hit != "true"
+              run: |
+                pip install --upgrade pip
+                pip install -r requirements.txt
+
     setup-env-variables:
         uses: ./.github/workflows/set-env-vars.yml
+        needs: 
+            - install-packages
         with:
             env_val: dev
         secrets:
             github-token: ${{ secrets.TOKEN}}
+    
+
+              
 
