@@ -20,7 +20,7 @@ jobs:
                 cd ${{ env.job-folder }}
                 terraform init
             - name: create infra
-              run: terraform apply -auto-approve
+              run: terraform apply -chdir=${{ env.job-folder }} -auto-approve
             - name: destroy infra
               if: always()
-              run: terraform destroy -auto-approve
+              run: terraform destroy -chdir=${{ env.job-folder }} -auto-approve
