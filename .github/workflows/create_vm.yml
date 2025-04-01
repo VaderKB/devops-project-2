@@ -10,16 +10,15 @@ jobs:
             job-folder: iac/ec2 
         steps:
             - name: get code
-            uses: actions/checkout@v4
+              uses: actions/checkout@v4
             - name: install terraform
-            uses: hashicorp/setup-terraform@v3
+              uses: hashicorp/setup-terraform@v3
             - name: initialize terraform
-            run: |
+              run: |
                 cd ${{ env.job-folder }}
                 terraform init
             - name: create infra
-            run: terraform apply -auto-approve
+              run: terraform apply -auto-approve
             - name: destroy infra
-            if: always()
-            run: terraform destroy -auto-approve
-    
+              if: always()
+              run: terraform destroy -auto-approve
