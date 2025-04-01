@@ -1,14 +1,15 @@
 name: set env variables
-on: workflow_call
-    inputs:
-        env_val:
-            description: specify the environment in which we are runnin the workflow
-            required: false
-            default: dev
-            type: string
-    secrets:
-       github-token:
-            required: true 
+on: 
+    workflow_call:
+        inputs:
+            env_val:
+                description: specify the environment in which we are runnin the workflow
+                required: false
+                default: dev
+                type: string
+        secrets:
+        github-token:
+                required: true 
 run-name: setting env variables
 jobs:
     set-env-vars:
